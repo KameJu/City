@@ -7,6 +7,8 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
+import static com.example.city.CitiesStorage.getInstance;
+
 public class CityCell extends ListCell<City>{
 
     @FXML
@@ -66,7 +68,7 @@ public class CityCell extends ListCell<City>{
 
             }
 
-            id.setText(city.getId().toString());
+            id.setText(getInstance().getId(city).toString());
             name.setText(city.getName());
             country.setText(city.getCountry());
             latitudeCoordinate.setText(city.getLatitudeCoordinate().toString());

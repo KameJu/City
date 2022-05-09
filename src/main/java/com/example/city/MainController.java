@@ -19,12 +19,12 @@ public class MainController {
 
     @FXML
     private void initialize() {
-        getInstance().add(new City(1,"Москва", "Россия", 1F, 1F, (byte) 1, 200, true, 1950, false, "Пупкин Иван Васильевич"));
-        getInstance().add(new City(2,"Буча", "Украина", 1F, 1F, (byte) 3, 200, true, 1950, false, "Пупкин Иван Васильевич"));
-        getInstance().add(new City(3,"Ирпень", "Украина", 1F, 1F, (byte) 3, 200, true, 1950, false, "Пупкин Иван Васильевич"));
-        getInstance().add(new City(4,"Киев", "Украина", 1F, 1F, (byte) 1, 200, true, 1950, false, "Пупкин Иван Васильевич"));
-        getInstance().add(new City(5,"Мелитополь", "Украина", 1F, 1F, (byte) 3, 200, true, 1950, false, "Пупкин Иван Васильевич"));
-        getInstance().add(new City(6, "Херосн", "Украина", 1F, 1F, (byte) 1, 200, true, 1950, false, "Пупкин Иван Васильевич"));
+        getInstance().add(new City("Москва", "Россия", 1F, 1F, (byte) 1, 200, true, 1950, false, "Пупкин Иван Васильевич"));
+        getInstance().add(new City("Буча", "Украина", 1F, 1F, (byte) 3, 200, true, 1950, false, "Пупкин Иван Васильевич"));
+        getInstance().add(new City("Ирпень", "Украина", 1F, 1F, (byte) 3, 200, true, 1950, false, "Пупкин Иван Васильевич"));
+        getInstance().add(new City("Киев", "Украина", 1F, 1F, (byte) 1, 200, true, 1950, false, "Пупкин Иван Васильевич"));
+        getInstance().add(new City("Мелитополь", "Украина", 1F, 1F, (byte) 3, 200, true, 1950, false, "Пупкин Иван Васильевич"));
+        getInstance().add(new City ("Херосн", "Украина", 1F, 1F, (byte) 1, 200, true, 1950, false, "Пупкин Иван Васильевич"));
         listView.getItems().addAll(getInstance().getAll());
 
         listView.setItems(getInstance().getAll());
@@ -32,21 +32,32 @@ public class MainController {
     }
 
     @FXML
-    public void addCityDialog() throws IOException {
-        openUpDialog("add_city.fxml", 600, 322);
+    private void addCityDialog() throws IOException {
+        openUpDialog("add_city.fxml");
     }
 
     @FXML
-    public void addMultipleDialog() throws IOException {
-        openUpDialog("add_city_multiple.fxml", 335, 218);
+    private void addMultipleDialog() throws IOException {
+        openUpDialog("add_city_multiple.fxml");
     }
 
-    private void openUpDialog(String path, int width, int height) throws IOException {
+    @FXML
+    private void removeCityDialog() throws IOException {
+        openUpDialog("remove_city.fxml");
+    }
+
+    @FXML
+    private void removeCityMultipleDialog() throws IOException {
+        openUpDialog("remove_city_multiple.fxml");
+    }
+
+    private void openUpDialog(String path) throws IOException {
         FXMLLoader loader = new FXMLLoader(AddCityController.class.getResource(path));
-        Scene scene = new Scene(loader.load(), width, height);
+        Scene scene = new Scene(loader.load());
         Stage stage = new Stage();
         stage.setScene(scene);
 
         stage.show();
     }
+
 }

@@ -16,10 +16,14 @@
                </HBox.margin>
             </Button>
             <Button mnemonicParsing="false" onAction="#addMultipleDialog" text="Добавить записи" />
-            <Button mnemonicParsing="false" text="Редактирование" />
-            <Button mnemonicParsing="false" text="Поиск" />
-            <Button mnemonicParsing="false" text="Удалить" />
-            <Button mnemonicParsing="false" text="Удалить группу" />
+            <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="547.0" spacing="5.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#removeCityMultipleDialog" text="Удалить группу" />
+                  <Button mnemonicParsing="false" onAction="#removeCityDialog" text="Удалить" />
+                  <Button mnemonicParsing="false" text="Редактирование" />
+                  <Button mnemonicParsing="false" text="Поиск" />
+               </children>
+            </HBox>
          </children>
       </HBox>
       <ListView fx:id="listView" layoutX="10.0" layoutY="50.0" prefHeight="1030.0" prefWidth="1900.0" />

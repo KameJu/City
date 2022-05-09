@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.city.AddMultipleController">
+   <children>
+      <Spinner fx:id="quantity" layoutX="143.0" layoutY="14.0" />
+      <RadioButton fx:id="start" layoutX="54.0" layoutY="59.0" mnemonicParsing="false" onAction="#startAction" text="В начало" />
+      <RadioButton fx:id="position" layoutX="54.0" layoutY="88.0" mnemonicParsing="false" onAction="#positionAction" text="В позицию" />
+      <RadioButton fx:id="end" layoutX="54.0" layoutY="113.0" mnemonicParsing="false" onAction="#endAction" text="В конец" />
+      <Spinner fx:id="onPosition" disable="true" layoutX="157.0" layoutY="85.0" prefHeight="18.0" prefWidth="97.0" />
+      <Button layoutX="83.0" layoutY="168.0" mnemonicParsing="false" onAction="#submit" text="ОК" />
+      <Button layoutX="180.0" layoutY="168.0" mnemonicParsing="false" onAction="#cancel" text="ОТМЕНА" />
+      <Label layoutX="48.0" layoutY="18.0" text="Количество" />
+   </children>
+</AnchorPane>

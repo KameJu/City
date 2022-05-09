@@ -45,7 +45,6 @@ public class AddCityController implements Initializable {
     private void submit() {
         if (allComplete()) {
             getInstance().add(new City(
-                    4,
                     name.getCharacters().toString(),
                     country.getCharacters().toString(),
                     parseFloat(latitudeCoordinate.getCharacters().toString()),

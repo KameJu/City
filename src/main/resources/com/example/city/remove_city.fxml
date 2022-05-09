@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.city.RemoveCityController">
+   <children>
+      <Button layoutX="14.0" layoutY="62.0" mnemonicParsing="false" onAction="#submit" text="ОК" />
+      <Button layoutX="111.0" layoutY="62.0" mnemonicParsing="false" onAction="#cancel" text="ОТМЕНА" />
+      <Spinner fx:id="index" layoutX="85.0" layoutY="14.0" prefHeight="24.0" prefWidth="100.0" />
+      <Label layoutX="15.0" layoutY="18.0" text="Номер" />
+   </children>
+</AnchorPane>

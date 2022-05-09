@@ -4,7 +4,6 @@ import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 
 public class City implements Observable {
-    private int id;
     private String name;
     private String country;
     private Float latitudeCoordinate;
@@ -17,32 +16,6 @@ public class City implements Observable {
     private String fullNameOfMayor;
 
     public City(
-            int id,
-            String name,
-            String country,
-            float latitudeCoordinate,
-            float longitudeCoordinate,
-            byte status,
-            int citizenCount,
-            boolean isSeaside,
-            int creationYear,
-            boolean isHaveRiver,
-            String fullNameOfMayor
-    ) {
-        this.id = id;
-        this.name = name;
-        this.country = country;
-        this.latitudeCoordinate = latitudeCoordinate;
-        this.longitudeCoordinate = longitudeCoordinate;
-        this.status = status;
-        this.citizenCount = citizenCount;
-        this.isSeaside = isSeaside;
-        this.creationYear = creationYear;
-        this.isHaveRiver = isHaveRiver;
-        this.fullNameOfMayor = fullNameOfMayor;
-    }
-
-    public City(
             String name,
             String country,
             float latitudeCoordinate,
@@ -64,14 +37,6 @@ public class City implements Observable {
         this.creationYear = creationYear;
         this.isHaveRiver = isHaveRiver;
         this.fullNameOfMayor = fullNameOfMayor;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {

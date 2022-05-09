@@ -19,7 +19,6 @@ public final class CitiesStorage {
     }
 
     public void add(City city) {
-        city.setId(storage.size() + 1);
         storage.add(city);
     }
 
@@ -35,9 +34,7 @@ public final class CitiesStorage {
     }
 
     public void remove(int from, int to) {
-        if (from <= to && from >= 0 && to < storage.size()) {
             storage.remove(from, to);
-        }
     }
 
     public ObservableList<City> getAll() {
@@ -48,11 +45,13 @@ public final class CitiesStorage {
         return storage.size();
     }
 
-//    public void updateId() {
-//        int counter = 1;
-//
-//        for (City city : storage) {
-//            city.setId(counter++);
-//        }
-//    }
+    public Integer getId(City city) {
+
+        for (int i = 0; i < storage.size(); i++) {
+            if (city.equals(storage.get(i))) {
+                return i + 1;
+            }
+        }
+        return 0;
+    }
 }
