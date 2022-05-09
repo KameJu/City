@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="50.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <RadioButton fx:id="isHaveRiver" disable="true" layoutX="1234.0" layoutY="16.0" mnemonicParsing="false" text="Речка" />
+      <Spinner fx:id="creationYear" layoutX="1049.0" layoutY="12.0" />
+      <RadioButton fx:id="isSeaside" disable="true" layoutX="921.0" layoutY="15.0" mnemonicParsing="false" text="Приморский" />
+      <VBox alignment="CENTER" layoutX="628.0" layoutY="-2.0" prefHeight="40.0" prefWidth="100.0">
+         <children>
+            <CheckBox fx:id="districtCenter" disable="true" mnemonicParsing="false" prefWidth="100.0" text="Райцентр" />
+            <CheckBox fx:id="regionalCenter" disable="true" mnemonicParsing="false" prefWidth="100.0" text="Обл центр" />
+            <CheckBox fx:id="capital" disable="true" mnemonicParsing="false" prefWidth="100.0" text="Столица" />
+         </children>
+      </VBox>
+      <TextField fx:id="longitudeCoordinate" editable="false" layoutX="510.0" layoutY="13.0" prefWidth="100.0" />
+      <TextField fx:id="latitudeCoordinate" editable="false" layoutX="392.0" layoutY="13.0" prefWidth="100.0" />
+      <TextField fx:id="country" editable="false" layoutX="220.0" layoutY="13.0" prefWidth="150.0" />
+      <TextField fx:id="name" editable="false" layoutX="76.0" layoutY="13.0" prefWidth="130.0" />
+      <Label fx:id="id" layoutX="14.0" layoutY="18.0" maxWidth="50.0" minWidth="25.0" text="Label" />
+      <Spinner fx:id="citizenCount" layoutX="736.0" layoutY="12.0" />
+      <TextField fx:id="fullNameOfMayor" editable="false" layoutX="1314.0" layoutY="14.0" maxWidth="300.0" />
+   </children>
+</AnchorPane>

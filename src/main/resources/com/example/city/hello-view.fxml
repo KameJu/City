@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.city.MainController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="1920.0" spacing="5.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#addCityDialog" text="Добавить 1 запись">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#addMultipleDialog" text="Добавить записи" />
+            <Button mnemonicParsing="false" text="Редактирование" />
+            <Button mnemonicParsing="false" text="Поиск" />
+            <Button mnemonicParsing="false" text="Удалить" />
+            <Button mnemonicParsing="false" text="Удалить группу" />
+         </children>
+      </HBox>
+      <ListView fx:id="listView" layoutX="10.0" layoutY="50.0" prefHeight="1030.0" prefWidth="1900.0" />
+   </children>
+</AnchorPane>
