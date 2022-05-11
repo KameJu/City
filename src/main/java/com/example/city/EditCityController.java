@@ -11,7 +11,8 @@ import java.util.ResourceBundle;
 import static com.example.city.CitiesStorage.getInstance;
 import static java.lang.Float.parseFloat;
 
-public class AddCityController implements Initializable {
+public class EditCityController implements Initializable {
+
 
     @FXML
     private TextField name;
@@ -38,17 +39,41 @@ public class AddCityController implements Initializable {
     @FXML
     private TextField fullNameOfMayor;
 
+    @FXML
+    Spinner<Integer> index;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         citizenCount.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, Integer.MAX_VALUE, 0));
         creationYear.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(200, Integer.MAX_VALUE, 0));
+
+        index.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, getInstance().size(), 0));
+        setValue();
+        index.getValueFactory().valueProperty().addListener(listener -> setValue());
+
+
+    }
+
+    private void setValue() {
+        City current = getInstance().get(index.getValue() - 1);
+
+        name.setText(current.getName());
+        country.setText(current.getCountry());
+        latitudeCoordinate.setText(current.getLatitudeCoordinate().toString());
+        longitudeCoordinate.setText(current.getLongitudeCoordinate().toString());
+        setStatus(current);
+        citizenCount.getValueFactory().setValue(current.getCitizenCount());
+        isSeaside.setSelected(current.isSeaside());
+        creationYear.getValueFactory().setValue(current.getCreationYear());
+        isHaveRiver.setSelected(current.isHaveRiver());
+        fullNameOfMayor.setText(current.getFullNameOfMayor());
     }
 
     @FXML
     private void submit() {
         if (allComplete()) {
-            getInstance().add(new City(
+            getInstance().edit(index.getValue() - 1, new City(
                     name.getCharacters().toString(),
                     country.getCharacters().toString(),
                     parseFloat(latitudeCoordinate.getCharacters().toString()),
@@ -78,13 +103,13 @@ public class AddCityController implements Initializable {
         }
         if (latitudeCoordinate == null ||
                 latitudeCoordinate.getCharacters().isEmpty() ||
-                !latitudeCoordinate.getCharacters().toString().matches("\\d+")
+                !latitudeCoordinate.getCharacters().toString().matches("\\d+.\\d+")
         ) {
             return false;
         }
         if (longitudeCoordinate == null ||
                 longitudeCoordinate.getCharacters().isEmpty() ||
-                !longitudeCoordinate.getCharacters().toString().matches("\\d+")
+                !longitudeCoordinate.getCharacters().toString().matches("\\d+.\\d+")
         ) {
             return false;
         }
@@ -99,11 +124,24 @@ public class AddCityController implements Initializable {
     }
 
     private byte getStatus() {
-        if(capital.isSelected())
+        if (capital.isSelected())
             return 1;
-        if(regionalCenter.isSelected())
+        if (regionalCenter.isSelected())
             return 2;
         return 3;
+    }
+
+    private void setStatus(City city) {
+        if (city.getStatus() == 1) {
+            capital.setSelected(true);
+            capitalAction();
+        } else if (city.getStatus() == 2) {
+            regionalCenter.setSelected(true);
+            regionalAction();
+        } else {
+            districtCenter.setSelected(true);
+            districtAction();
+        }
     }
 
     @FXML
@@ -123,6 +161,5 @@ public class AddCityController implements Initializable {
         districtCenter.setSelected(false);
         regionalCenter.setSelected(false);
     }
-
 
 }

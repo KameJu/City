@@ -11,22 +11,22 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="322.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.city.AddCityController">
    <children>
-      <RadioButton fx:id="isHaveRiver" layoutX="424.0" layoutY="194.0" mnemonicParsing="false" text="Речка" />
-      <Spinner fx:id="creationYear" layoutX="378.0" layoutY="63.0" />
-      <RadioButton fx:id="isSeaside" layoutX="260.0" layoutY="194.0" mnemonicParsing="false" text="Приморский" />
+      <TextField fx:id="name" layoutX="96.0" layoutY="23.0" prefHeight="24.0" prefWidth="150.0" />
+      <TextField fx:id="country" layoutX="96.0" layoutY="63.0" prefWidth="150.0" />
+      <TextField fx:id="latitudeCoordinate" layoutX="96.0" layoutY="105.0" prefWidth="100.0" />
+      <TextField fx:id="longitudeCoordinate" layoutX="96.0" layoutY="149.0" prefWidth="100.0" />
       <VBox alignment="CENTER" layoutX="96.0" layoutY="191.0" prefHeight="40.0" prefWidth="100.0">
          <children>
-            <CheckBox fx:id="districtCenter" mnemonicParsing="false" prefWidth="100.0" text="Райцентр" />
-            <CheckBox fx:id="regionalCenter" mnemonicParsing="false" prefWidth="100.0" text="Обл центр" />
-            <CheckBox fx:id="capital" mnemonicParsing="false" prefWidth="100.0" text="Столица" />
+            <CheckBox fx:id="districtCenter" mnemonicParsing="false" onAction="#districtAction" prefWidth="100.0" text="Райцентр" />
+            <CheckBox fx:id="regionalCenter" mnemonicParsing="false" onAction="#regionalAction" prefWidth="100.0" text="Обл центр" />
+            <CheckBox fx:id="capital" mnemonicParsing="false" onAction="#capitalAction" prefWidth="100.0" text="Столица" />
          </children>
       </VBox>
-      <TextField fx:id="longitudeCoordinate" layoutX="96.0" layoutY="149.0" prefWidth="100.0" />
-      <TextField fx:id="latitudeCoordinate" layoutX="96.0" layoutY="105.0" prefWidth="100.0" />
-      <TextField fx:id="country" layoutX="96.0" layoutY="63.0" prefWidth="150.0" />
-      <TextField fx:id="name" layoutX="96.0" layoutY="23.0" prefHeight="24.0" prefWidth="150.0" />
       <Spinner fx:id="citizenCount" layoutX="378.0" layoutY="23.0" />
+      <Spinner fx:id="creationYear" layoutX="378.0" layoutY="63.0" />
       <TextField fx:id="fullNameOfMayor" layoutX="378.0" layoutY="111.0" maxWidth="300.0" />
+      <RadioButton fx:id="isSeaside" layoutX="260.0" layoutY="194.0" mnemonicParsing="false" text="Приморский" />
+      <RadioButton fx:id="isHaveRiver" layoutX="424.0" layoutY="194.0" mnemonicParsing="false" text="Речка" />
       <Label layoutX="265.0" layoutY="115.0" text="ФИО мера" />
       <Label layoutX="14.0" layoutY="27.0" text="Город" />
       <Label layoutX="14.0" layoutY="67.0" text="Страна" />

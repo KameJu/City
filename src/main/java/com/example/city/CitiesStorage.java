@@ -1,5 +1,6 @@
 package com.example.city;
 
+import javafx.beans.InvalidationListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -18,13 +19,28 @@ public final class CitiesStorage {
         return INSTANCE;
     }
 
+    public void addListener(InvalidationListener listener) {
+        storage.addListener(listener);
+    }
     public void add(City city) {
         storage.add(city);
     }
 
+    public void add(int index, City city) {
+        storage.add(index, city);
+    }
+
     public void addAll(int index , List<City> city) {
         storage.addAll(index, city);
+    }
 
+    public void edit(int index, City city) {
+        storage.remove(index);
+        storage.add(index, city);
+    }
+
+    public City get(int index) {
+        return storage.get(index);
     }
 
     public void remove(int index) {

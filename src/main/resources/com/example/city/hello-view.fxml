@@ -16,16 +16,16 @@
                </HBox.margin>
             </Button>
             <Button mnemonicParsing="false" onAction="#addMultipleDialog" text="Добавить записи" />
-            <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="547.0" spacing="5.0">
+            <HBox fx:id="additional" alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="547.0" spacing="5.0" visible="false">
                <children>
-                  <Button mnemonicParsing="false" onAction="#removeCityMultipleDialog" text="Удалить группу" />
+                  <Button mnemonicParsing="false" onAction="#editDialog" text="Редактирование" />
+                  <Button mnemonicParsing="false" onAction="#searchDialog" text="Поиск" />
                   <Button mnemonicParsing="false" onAction="#removeCityDialog" text="Удалить" />
-                  <Button mnemonicParsing="false" text="Редактирование" />
-                  <Button mnemonicParsing="false" text="Поиск" />
+                  <Button mnemonicParsing="false" onAction="#removeCityMultipleDialog" text="Удалить группу" />
                </children>
             </HBox>
          </children>
       </HBox>
-      <ListView fx:id="listView" layoutX="10.0" layoutY="50.0" prefHeight="1030.0" prefWidth="1900.0" />
+      <ListView fx:id="listView" layoutX="10.0" layoutY="50.0" prefHeight="1030.0" prefWidth="1900.0" visible="false" />
    </children>
 </AnchorPane>
