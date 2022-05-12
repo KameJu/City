@@ -37,9 +37,8 @@ public class AddMultipleController implements Initializable {
         if (start.isSelected() || position.isSelected() || end.isSelected()) {
             var list = new ArrayList<City>();
 
-            //TODO add random cities
             for (int i = 0; i < quantity.getValue(); i++) {
-                list.add(new City("Киев", "Украина", 1F, 1F, (byte) 1, 200, true, 1950, false, "Пупкин Иван Васильевич"));
+                list.add(getRandomCity());
             }
 
             int index = defineIndex();
@@ -93,6 +92,24 @@ public class AddMultipleController implements Initializable {
             return onPosition.getValue();
         }
         return getInstance().size();
+    }
+
+    private City getRandomCity() {
+        ArrayList<City> cities = new ArrayList<>();
+
+        cities.add(new City("Киев", "Украина", 50.4501F, 30.5234F, (byte) 1, 2954564, false, 430, true, "Кличко Віталій Володимирович"));
+        cities.add(new City("Буча", "Украина", 50.5533F, 30.2135F, (byte) 3, 36971, false, 	1630, true, "Федорук Анатолій Петрович"));
+        cities.add(new City("Ирпень", "Украина", 50.5188F, 30.2398F, (byte) 3,  60084 , false, 	1899, true, "Карплюк Володимир Андрійович"));
+        cities.add(new City("Мелитополь", "Украина", 46.8550F, 35.3587F, (byte) 3, 154839, false, 1784, true, "Фёдоров Иван Сергеевич"));
+        cities.add(new City("Херосн", "Украина", 46.6354F, 32.6169F, (byte) 2, 289697, false, 1778, true, "Колихаєв Ігор Вікторович"));
+        cities.add(new City("Железный Порт", "Украина", 46.1236F, 32.2913F, (byte) 3, 1528, true, 1922, true, "Колихаєв Ігор Вікторович"));
+
+        return cities.get(rnd(cities.size()));
+    }
+
+    public static int rnd(final int max)
+    {
+        return (int) (Math.random() * max);
     }
 
 

@@ -87,10 +87,16 @@ public class CityCell extends ListCell<City>{
 
     private void setStatus(City city) {
         if (city.getStatus() == 1) {
+            regionalCenter.setSelected(false);
+            districtCenter.setSelected(false);
             capital.setSelected(true);
         } else if (city.getStatus() == 2) {
+            capital.setSelected(false);
+            districtCenter.setSelected(false);
             regionalCenter.setSelected(true);
         } else if (city.getStatus() == 3) {
+            capital.setSelected(false);
+            regionalCenter.setSelected(false);
             districtCenter.setSelected(true);
         }
     }

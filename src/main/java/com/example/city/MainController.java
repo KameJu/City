@@ -23,14 +23,6 @@ public class MainController {
     private void initialize() {
         getInstance().addListener( listener -> showAdditional());
 
-        getInstance().add(new City("Москва", "Россия", 1F, 1F, (byte) 1, 200, true, 1950, false, "Пупкин Иван Васильевич"));
-        getInstance().add(new City("Буча", "Украина", 1F, 1F, (byte) 3, 200, true, 1950, false, "Пупкин Иван Васильевич"));
-        getInstance().add(new City("Ирпень", "Украина", 1F, 1F, (byte) 3, 200, true, 1950, false, "Пупкин Иван Васильевич"));
-        getInstance().add(new City("Киев", "Украина", 1F, 1F, (byte) 1, 200, true, 1950, false, "Пупкин Иван Васильевич"));
-        getInstance().add(new City("Мелитополь", "Украина", 1F, 1F, (byte) 3, 200, true, 1950, false, "Пупкин Иван Васильевич"));
-        getInstance().add(new City("Херосн", "Украина", 1F, 1F, (byte) 1, 200, true, 1950, false, "Пупкин Иван Васильевич"));
-        listView.getItems().addAll(getInstance().getAll());
-
         listView.setItems(getInstance().getAll());
         listView.setCellFactory(new CityCellFactory());
     }

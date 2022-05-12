@@ -128,4 +128,20 @@ public class City implements Observable {
     public void removeListener(InvalidationListener listener) {
 
     }
+
+    @Override
+    public String toString() {
+        return "City{" +
+                "name=" + name + '\'' +
+                ", country=" + country + '\'' +
+                ", latitudeCoordinate=" + latitudeCoordinate +
+                ", longitudeCoordinate=" + longitudeCoordinate +
+                ", status=" + status +
+                ", citizenCount=" + citizenCount +
+                ", isSeaside=" + isSeaside +
+                ", creationYear=" + creationYear +
+                ", isHaveRiver=" + isHaveRiver +
+                ", fullNameOfMayor=" + fullNameOfMayor + '\'' +
+                '}';
+    }
 }

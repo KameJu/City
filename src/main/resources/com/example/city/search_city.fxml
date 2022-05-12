@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.city.SearchCityController">
+   <children>
+      <TextField fx:id="name" layoutX="85.0" layoutY="24.0" onAction="#search" prefWidth="130.0" promptText="Город" />
+      <TextField fx:id="country" layoutX="229.0" layoutY="24.0" onAction="#search" prefWidth="150.0" promptText="Страна" />
+      <TextField fx:id="latitudeCoordinate" layoutX="400.0" layoutY="24.0" onAction="#search" prefWidth="100.0" promptText="Широта" />
+      <TextField fx:id="longitudeCoordinate" layoutX="520.0" layoutY="24.0" onAction="#search" prefWidth="100.0" promptText="Долгота" />
+      <VBox alignment="CENTER" layoutX="637.0" layoutY="8.0" prefHeight="40.0" prefWidth="100.0">
+         <children>
+            <CheckBox fx:id="districtCenter" mnemonicParsing="false" onAction="#districtAction" prefWidth="100.0" text="Райцентр" />
+            <CheckBox fx:id="regionalCenter" mnemonicParsing="false" onAction="#regionalAction" prefWidth="100.0" text="Обл центр" />
+            <CheckBox fx:id="capital" mnemonicParsing="false" onAction="#capitalAction" prefWidth="100.0" text="Столица" />
+         </children>
+      </VBox>
+      <RadioButton fx:id="isSeaside" layoutX="931.0" layoutY="25.0" mnemonicParsing="false" onAction="#search" text="Приморский" />
+      <RadioButton fx:id="isHaveRiver" layoutX="1244.0" layoutY="26.0" mnemonicParsing="false" onAction="#search" text="Речка" />
+      <TextField fx:id="fullNameOfMayor" layoutX="1324.0" layoutY="24.0" onAction="#search" prefWidth="210.0" promptText="ФИО мера" />
+      <ListView fx:id="listView" layoutY="70.0" prefHeight="1010.0" prefWidth="1600.0" />
+   </children>
+</AnchorPane>
