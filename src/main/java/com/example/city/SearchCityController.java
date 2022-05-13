@@ -41,6 +41,7 @@ public class SearchCityController implements Initializable {
         search();
     }
 
+    //поиск по фильтрам
     @FXML
     private void search() {
         List<City> cities = getInstance().getAll().stream().toList();

@@ -69,6 +69,7 @@ public class AddCityController implements Initializable {
         getStage().close();
     }
 
+    //проверка на то все ли поля заполнены
     private boolean allComplete() {
         if (name == null || name.getCharacters().isEmpty()) {
             return false;

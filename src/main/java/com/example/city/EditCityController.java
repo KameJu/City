@@ -94,6 +94,7 @@ public class EditCityController implements Initializable {
         getStage().close();
     }
 
+    //проверка на то все ли поня заполнены
     private boolean allComplete() {
         if (name == null || name.getCharacters().isEmpty()) {
             return false;

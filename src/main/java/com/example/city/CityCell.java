@@ -85,6 +85,7 @@ public class CityCell extends ListCell<City>{
 
     }
 
+    //устанавливает статус города
     private void setStatus(City city) {
         if (city.getStatus() == 1) {
             regionalCenter.setSelected(false);
